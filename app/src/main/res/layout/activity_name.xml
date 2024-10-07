@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NameActivity">
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa tu nombre"
+        android:layout_margin="16dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Nombre"
+        android:layout_below="@id/nameEditText"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No se ha guardado ningún nombre."
+        android:layout_below="@id/saveButton"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/startTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Tarea de Red"
+        android:layout_below="@id/nameTextView"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

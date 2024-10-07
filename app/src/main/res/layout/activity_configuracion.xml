@@ -1,0 +1,203 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Selector de tipo de fondo -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundTypeSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/backgroundTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selecciona_el_tipo_de_fondo0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupBackgroundType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/backgroundTypeLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/color0"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioButtonImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen0"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout para seleccionar colores -->
+    <LinearLayout
+        android:id="@+id/colorSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/backgroundTypeSelector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/colorSelectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selecciona_un_color_de_fondo0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorRedButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@android:color/holo_red_light"
+                app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp"
+                android:contentDescription="Seleccionar color rojo" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorGreenButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@android:color/holo_green_light"
+                app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp"
+                android:contentDescription="Seleccionar color verde" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorBlueButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@android:color/holo_blue_light"
+                app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp"
+                android:contentDescription="Seleccionar color azul" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Layout para seleccionar imágenes -->
+    <LinearLayout
+        android:id="@+id/imageSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/backgroundTypeSelector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/imageSelectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selecciona_una_imagen_de_fondo0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <!-- Botón para seleccionar la primera imagen -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image1Button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_image1"
+                    android:contentDescription="@string/imagen_10" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botón para seleccionar la segunda imagen -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image2Button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_image2"
+                    android:contentDescription="@string/imagen_20" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botón para volver a la pantalla principal -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volver_a_inicio0"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/colorSelectionLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

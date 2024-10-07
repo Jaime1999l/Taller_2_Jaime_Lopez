@@ -1,0 +1,75 @@
+@startuml
+' Definir las clases principales
+
+class MainActivity {
+    - BackgroundUtil backgroundUtil
+    - TextView greetingTextView
+    - ExecutorService executorService
+    - String lastGreeting
+    + onCreate(Bundle): void
+    + onResume(): void
+    + onDestroy(): void
+    - startGreetingChecker(): void
+    - calculateNextCheckDelay(): long
+    - getMillisUntilNextHour(int): long
+    - getGreetingMessage(): String
+    - updateGreeting(String): void
+}
+
+class NameActivity {
+    - EditText nameEditText
+    - TextView nameTextView
+    - UserViewModel userViewModel
+    - Button startTaskButton
+    + onCreate(Bundle): void
+}
+
+class ConfiguracionActivity {
+    - SharedPreferences sharedPreferences
+    - BackgroundUtil backgroundUtil
+    + onCreate(Bundle): void
+    - setColorAndReturn(int): void
+    - setImageAndReturn(int): void
+}
+
+class BackgroundUtil {
+    - SharedPreferences sharedPreferences
+    - ExecutorService executorService
+    + applyBackground(Activity): void
+    + shutdown(): void
+}
+
+class FetchGreetingTask {
+    - Context context
+    - TextView greetingTextView
+    + FetchGreetingTask(Context, TextView)
+    + doInBackground(Void...): String
+    + onPreExecute(): void
+    + onPostExecute(String): void
+}
+
+class SimulatedNetworkTask {
+    - Context context
+    - TextView resultTextView
+    - ExecutorService executorService
+    + execute(): void
+    - simulateNetworkTask(): String
+}
+
+class UserViewModel {
+    - MutableLiveData<String> userName
+    - SharedPreferences sharedPreferences
+    + getUserName(): LiveData<String>
+    + saveUserName(String): void
+    - loadUserName(): void
+}
+
+' Definir relaciones entre las clases
+
+NameActivity --> UserViewModel : utiliza
+NameActivity --> SimulatedNetworkTask : utiliza
+MainActivity --> BackgroundUtil : utiliza
+MainActivity --> FetchGreetingTask : utiliza
+ConfiguracionActivity --> BackgroundUtil : utiliza
+
+@enduml
