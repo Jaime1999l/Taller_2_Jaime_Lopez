@@ -4,7 +4,7 @@ https://github.com/Jaime1999l/Taller_2_Jaime_Lopez.git
 
 ## Descripción del Proyecto
 
-Este proyecto es una aplicación Android desarrollada para el Taller 2 de Android de Jaime López. La aplicación implementa varias funcionalidades, entre las cuales se incluyen tareas de red simuladas, manejo de configuración de fondo de pantalla, actualización de mensajes de saludo dependiendo de la hora del día, y el uso de `ViewModel` para la gestión de datos del usuario.
+La aplicación implementa varias funcionalidades, entre las cuales se incluyen tareas de red simuladas, manejo de configuración de fondo de pantalla, actualización de mensajes de saludo dependiendo de la hora del día, y el uso de `ViewModel` para la gestión de datos del usuario.
 
 ### Funcionalidades Principales
 
