@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.taller_2_jaime_lopez.activity.NameActivity;
+import com.example.taller_2_jaime_lopez.activity.RedActivity;
 
 import org.json.JSONObject;
 
@@ -45,14 +45,14 @@ public class SimulatedNetworkTask {
                 String result = "Estado: " + status + "\nMensaje: " + message + "\nSaludo: " + greeting + "\nHora: " + time;
 
                 // Actualizar la UI desde el hilo principal.
-                ((NameActivity) context).runOnUiThread(() -> {
+                ((RedActivity) context).runOnUiThread(() -> {
                     resultTextView.setText(result);
                     Toast.makeText(context, "Datos cargados desde la simulación de red.", Toast.LENGTH_SHORT).show();
                 });
 
             } catch (Exception e) {
                 Log.e(TAG, "Error al simular la tarea de red.", e);
-                ((NameActivity) context).runOnUiThread(() -> {
+                ((RedActivity) context).runOnUiThread(() -> {
                     resultTextView.setText("Error al cargar los datos.");
                     Toast.makeText(context, "Error al simular la tarea de red.", Toast.LENGTH_SHORT).show();
                 });

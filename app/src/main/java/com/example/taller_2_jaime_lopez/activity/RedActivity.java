@@ -1,7 +1,6 @@
 package com.example.taller_2_jaime_lopez.activity;
 
 import android.annotation.SuppressLint;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -16,7 +15,7 @@ import com.example.taller_2_jaime_lopez.model.UserViewModel;
 import com.example.taller_2_jaime_lopez.task.SimulatedNetworkTask;
 import com.example.taller_2_jaime_lopez.util.BackgroundUtil;
 
-public class NameActivity extends AppCompatActivity {
+public class RedActivity extends AppCompatActivity {
 
     private EditText nameEditText;
     private TextView nameTextView;
@@ -52,10 +51,10 @@ public class NameActivity extends AppCompatActivity {
         saveButton.setOnClickListener(v -> {
             String name = nameEditText.getText().toString().trim();
             if (TextUtils.isEmpty(name)) {
-                Toast.makeText(NameActivity.this, "Por favor ingresa un nombre.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RedActivity.this, "Por favor ingresa un nombre.", Toast.LENGTH_SHORT).show();
             } else {
                 userViewModel.saveUserName(name);
-                Toast.makeText(NameActivity.this, "Nombre guardado correctamente.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RedActivity.this, "Nombre guardado correctamente.", Toast.LENGTH_SHORT).show();
                 nameEditText.setText("");
             }
         });

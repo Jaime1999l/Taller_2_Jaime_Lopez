@@ -1,0 +1,19 @@
+@startuml
+actor Usuario
+
+usecase "Ver saludo personalizado" as UC_VerSaludo
+usecase "Configurar fondo" as UC_ConfigurarFondo
+usecase "Guardar nombre de usuario" as UC_GuardarNombre
+usecase "Cambiar fondo a color" as UC_CambiarColor
+usecase "Cambiar fondo a imagen" as UC_CambiarImagen
+usecase "Gestionar operación de red" as UC_Red
+
+Usuario --> UC_VerSaludo
+Usuario --> UC_ConfigurarFondo
+Usuario --> UC_Red
+
+UC_ConfigurarFondo --> UC_CambiarColor : <<include>>
+UC_ConfigurarFondo --> UC_CambiarImagen : <<include>>
+UC_Red --> UC_GuardarNombre : <<include>>
+
+@enduml

@@ -21,7 +21,7 @@
         </activity>
 
         <!-- Actividad Principal donde se ingresan los datos del usuario -->
-        <activity android:name=".activity.NameActivity"
+        <activity android:name=".activity.RedActivity"
             android:exported="true" />
 
         <!-- Actividad de configuración para cambiar el fondo de la aplicación -->

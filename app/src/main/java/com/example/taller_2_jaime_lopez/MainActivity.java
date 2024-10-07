@@ -3,7 +3,6 @@ package com.example.taller_2_jaime_lopez;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -13,16 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.taller_2_jaime_lopez.activity.ConfiguracionActivity;
-import com.example.taller_2_jaime_lopez.activity.NameActivity;
+import com.example.taller_2_jaime_lopez.activity.RedActivity;
 import com.example.taller_2_jaime_lopez.task.FetchGreetingTask;
 import com.example.taller_2_jaime_lopez.util.BackgroundUtil;
 
-import org.json.JSONObject;
-
 import java.util.Calendar;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ExecutorService;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         new FetchGreetingTask(this, greetingTextView).execute();
 
         mainActivityButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, NameActivity.class);
+            Intent intent = new Intent(MainActivity.this, RedActivity.class);
             startActivity(intent);
         });
 

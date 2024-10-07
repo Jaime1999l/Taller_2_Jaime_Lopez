@@ -1,5 +1,4 @@
 @startuml
-' Definir las clases principales
 
 class MainActivity {
     - BackgroundUtil backgroundUtil
@@ -16,7 +15,7 @@ class MainActivity {
     - updateGreeting(String): void
 }
 
-class NameActivity {
+class RedActivity {
     - EditText nameEditText
     - TextView nameTextView
     - UserViewModel userViewModel
@@ -64,10 +63,8 @@ class UserViewModel {
     - loadUserName(): void
 }
 
-' Definir relaciones entre las clases
-
-NameActivity --> UserViewModel : utiliza
-NameActivity --> SimulatedNetworkTask : utiliza
+RedActivity --> UserViewModel : utiliza
+RedActivity --> SimulatedNetworkTask : utiliza
 MainActivity --> BackgroundUtil : utiliza
 MainActivity --> FetchGreetingTask : utiliza
 ConfiguracionActivity --> BackgroundUtil : utiliza
